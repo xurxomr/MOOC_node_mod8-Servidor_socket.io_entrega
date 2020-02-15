@@ -14,7 +14,7 @@ Versión: 15 de Febrero
 
 ## Descripción de la práctica
 
-Esta práctica consiste en realizar una serie de mejoras sobre una aplicación web de chat implementada utilizando socket.io. Se proporciona un cliente web completo que contiene la interfaz web del chat y que gestiona el envío de mensajes de los usuarios. Se proporciona también un servidor web que reenvía los mensajes de cada cliente para que todos los participantes del chat los reciban. Sin embargo, este servidor está completo ya que le faltan una serie de funcionalidades implementadas en el cliente. El alumno debe completar el código de servidor para soportar todas las funcionalidades que ofrece el cliente.
+Esta práctica consiste en completar una aplicación web de chat implementada utilizando socket.io. Se proporciona un cliente web completo que contiene la interfaz web del chat y que gestiona el envío de mensajes de los usuarios. Se proporciona también un servidor web que reenvía los mensajes de cada cliente para que todos los participantes del chat los reciban. Sin embargo, este servidor está incompleto ya que le faltan una serie de funcionalidades implementadas en el cliente. El alumno debe completar el código de servidor para soportar todas las funcionalidades que ofrece el cliente.
 
 ## Instalación
 
@@ -30,7 +30,7 @@ Esta práctica consiste en realizar una serie de mejoras sobre una aplicación w
  	```
  	npm install
  	```
-El fichero `index.js` contiene el codigo del servidor web. En la carpeta public están todos los ficheros asociados al cliente, siendo el más relevante el fichero `index.html`, ya que en él se implementa toda la lógica asociada al cliente de chat. Sólo es necesario que el alumno realice modificaciones en el fichero `index.js`.
+El fichero `index.js` contiene el codigo del servidor web. En la carpeta `public` están todos los ficheros asociados al cliente, siendo el más relevante el fichero `index.html`, ya que en él se implementa toda la lógica asociada al cliente de chat. Sólo es necesario que el alumno realice modificaciones en el fichero `index.js`.
 
 ## Mensajes 
 
@@ -54,8 +54,8 @@ Todos los mensajes que se envían o reciben en la aplicación de chat se listan 
 
 Como se ha mencionado, el fichero `index.js` está incompleto ya que le falta implementar una serie de funcionalidades. El alumno debe completar dichas funcionalidades, las cuales se indican a continuación:
 
- * **Contador de participantes**: El cliente web recibe los mensajes `new_member` y `member_exit` cuando un participante se conecta/desconecta y muestra el nº de participantes actualizado en el chat. Ahora mismo siempre muestra 0 porque el servidor no le está informando de cuantos participantes hay. El alumno debe modificar el fichero `index.js` para incluir la información necesaria en los mensajes de  `new_member` y `member_exit`. Hay que crear una variable en la que se almacene el nº de participantes en cada momento, incrementándo esta cuenta o decrementándola cada vez que un cliente se conecte/desconecte.
+ * **Contador de participantes**: El cliente web recibe los mensajes `new_member` y `member_exit` cuando un participante se conecta/desconecta y muestra el nº de participantes actualizado en el chat. Ahora mismo siempre muestra 0 porque el servidor no le está informando de cuantos participantes hay. El alumno debe modificar el fichero `index.js` para incluir la información necesaria en los mensajes de  `new_member` y `member_exit`. El alumno debe crear una variable global en la que se almacene el nº de participantes en cada momento, incrementándo esta cuenta o decrementándola cada vez que un cliente se conecte/desconecte.
 
  * **Confetti**: En la interfaz web hay un botón con un icono de confetti que emite un mensaje del tipo `confetti_thrown`. Sin embargo, la animación de confetti no se desencadena hasta que el servidor web le envía al cliente el evento `confetti_received`. El alumno debe modificar el fichero `index.js` para que cada vez que el servidor reciba un mensaje del tipo `confetti_thrown`, éste envíe un mensaje `confetti_received` a todos los participantes, incluyendo en el contenido del mensaje las variables `user` y `from` tal y como se indica en la tabla anterior, similar a cómo se lleva a cabo en el mensaje `new_member`.
- 
+
 
