@@ -59,3 +59,23 @@ Como se ha mencionado, el fichero `index.js` está incompleto ya que le falta im
  * **Confetti**: En la interfaz web hay un botón con un icono de confetti que emite un mensaje del tipo `confetti_thrown`. Sin embargo, la animación de confetti no se desencadena hasta que el servidor web le envía al cliente el evento `confetti_received`. El alumno debe modificar el fichero `index.js` para que cada vez que el servidor reciba un mensaje del tipo `confetti_thrown`, éste envíe un mensaje `confetti_received` a todos los participantes, incluyendo en el contenido del mensaje las variables `user` y `from` tal y como se indica en la tabla anterior, similar a cómo se lleva a cabo en el mensaje `new_member`.
 
 
+## Entrega de la práctica
+
+El alumno debe subir un fichero comprimido ZIP incluyendo todos los ficheros de la práctica excepto el directorio `node_modules` (si existe).
+
+## Evaluación de la práctica
+
+La evaluación de la práctica se realizará mediante revisión por pares (P2P). Cada alumno tendrá que revisar la práctica de 3 de sus compañeros y otros 3 revisarán la suya. 
+
+El objetivo de este curso es sacar el máximo provecho al trabajo que están dedicando, por lo que les recomendamos que utilicen la evaluación para ayudar a sus compañeros enviando comentarios sobre la corrección del código, su claridad, legibilidad, estructuración y documentación. 
+
+Dado que es un curso para principiantes, ante la duda les pedimos que sean benevolentes con sus compañeros, porque muchos participantes están empezando y los primeros pasos siempre son difíciles.
+
+**OJO! Una vez enviada la evaluación, está no se puede cambiar.** Piensen bien su evaluación antes de enviarla.
+
+**RÚBRICA:** Se puntuará el ejercicio a corregir sumando el % indicado a la nota total si la parte indicada es correcta:
+
+* **50%:** La funcionalidad de contar participantes funciona correctamente
+* **50%:** La funcionalidad de lanzar confetti funciona correctamente
+
+
