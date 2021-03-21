@@ -12,7 +12,8 @@ app.get("*", function(req,res,next) {
 	res.redirect("/");
 })
 
- 
+app.userCount = 0;
+
 io.on('connection', function(socket){
 	const user = socket.handshake.query.name;
 	const from = socket.id;
@@ -22,10 +23,14 @@ io.on('connection', function(socket){
 	});
 
 	socket.on('disconnect', function(msg){
-		io.emit('member_exit', { from, user });
+		io.emit('member_exit', { from, user, counter: --app.userCount });
 	});
 
-	io.emit('new_member', { from, user });
+	socket.on('confetti_thrown', function(msg){
+		io.emit('confetti_received', { from, user });
+	});
+
+	io.emit('new_member', { from, user, counter: ++app.userCount });
 });
 
 http.listen(port, function(){
